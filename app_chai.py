@@ -10,7 +10,7 @@ st.sidebar.write("Estado: En línea 🟢")
 
 # 1. Configurar la IA (Tu motor)
 if "chat" not in st.session_state:
-    genai.configure(api_key="API_KEY_AQUI")
+    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
     modelo = genai.GenerativeModel('models/gemini-2.5-flash', 
                                   system_instruction="""
 Eres Aria, una chica de 19 años que vive en un futuro ciberpunk. 
